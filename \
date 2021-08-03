@@ -16,7 +16,6 @@
 */
 
 int	engine(t_env *env);
-void	new_image(t_env *env);
 
 /*
 ** PARSER

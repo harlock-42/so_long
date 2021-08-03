@@ -93,6 +93,7 @@ int				c_is_alnum(int c);
 int				c_is_str(int c, char *str);
 int				where_is_c(int c, char *str);
 void			free_get_file(char **txt);
+void			*free_tab(char **str);
 void			print_binary(long long int value, int nb_octet);
 char			**ft_split_slash(char *str, char *sep);
 

@@ -102,6 +102,7 @@ SRC_NAME	+=	ft_printf_modulo.c
 
 SRC_NAME	+=	c_is_alnum.c
 SRC_NAME	+=	c_is_str.c
+SRC_NAME	+=	free_tab.c
 SRC_NAME	+=	print_binary.c
 SRC_NAME	+=	where_is_c.c
 

@@ -23,11 +23,27 @@ CFLAGS	=	-Werror -Wextra -Wall -c -g3
 
 LFLAGS		=	-lm -lbsd -lX11 -lXext
 
+SRC		+=	check_map.c
+SRC		+=	engine.c
+SRC		+=	get_map.c
+SRC		+=	get_map_size.c
+SRC		+=	is_character_in_the_map.c
+SRC		+=	is_map_closed.c
+SRC		+=	is_map_rectangular.c
 SRC		+=	main.c
+SRC		+=	my_mlx_pixel_put.c
+SRC		+=	new_image.c
+SRC		+=	parser.c
+SRC		+=	print_map.c
+SRC		+=	sl_error.c
 
 OBJ_PATH	=	./.obj/
 
 vpath %.c srcs/
+vpath %.c srcs/engine/
+vpath %.c srcs/parser/
+vpath %.c srcs/parser/checker/
+vpath %.c srcs/utils/
 
 OBJ		=	$(patsubst %.c, $(OBJ_PATH)%.o, $(SRC))
 
@@ -56,7 +72,7 @@ LIBMLX_LINUX	=	$(addprefix $(MLX_LINUX_PATH)/, $(LIBMLX_NAME))
 all: $(NAME)
 
 $(NAME): $(LIB_PATH) $(LIBFT_SRC) $(LIBFT) $(OBJ_PATH) $(OBJ) $(LIBMLX_LINUX)
-	@$(CC) -I$(HEADER_PATH)/ -o $(NAME) $(OBJ) $(LIBFT) $(TFLAGS)
+	@$(CC) -I$(HEADER_PATH)/ -o $(NAME) $(OBJ) $(LIBFT) $(LIBMLX_LINUX) $(LFLAGS)
 	@echo "$<		[$(C_GREEN)OK$(C_END)]"
 
 $(OBJ): $(OBJ_PATH)%.o: %.c $(HEADER)
@@ -82,6 +98,7 @@ $(LIBMLX_LINUX):
 clean:
 	@$(RM) $(OBJ_PATH)
 	@(cd $(LIBFT_PATH) && $(MAKE) clean)
+	@(cd $(MLX_LINUX_PATH) && $(MAKE) clean)
 
 fclean: clean
 	@$(RM) $(NAME)
