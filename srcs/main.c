@@ -9,7 +9,7 @@ static	void	start_game(t_env *env)
 		env->data.height, "so_long");
 	new_image(env);
 	engine(env);
-	mlx_put_image_to_window(env->mlx.mlx, env->mlx.win, env->img.ptr, 0, 0);
+	mlx_put_image_to_window(env->mlx.mlx, env->mlx.win, env->img.img, 0, 0);
 	mlx_loop(env->mlx.mlx);
 }
 

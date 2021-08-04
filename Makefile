@@ -24,6 +24,7 @@ CFLAGS	=	-Werror -Wextra -Wall -c -g3
 LFLAGS		=	-lm -lbsd -lX11 -lXext
 
 SRC		+=	check_map.c
+SRC		+=	color_px.c
 SRC		+=	engine.c
 SRC		+=	get_map.c
 SRC		+=	get_map_size.c

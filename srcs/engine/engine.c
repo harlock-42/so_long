@@ -2,8 +2,8 @@
 
 int	engine(t_env *env)
 {
-	int	x;
-	int	y;
+	int		x;
+	int		y;
 
 	x = 0;
 	y = 0;
@@ -12,7 +12,7 @@ int	engine(t_env *env)
 		y = 0;
 		while (y < env->data.height)
 		{
-			my_mlx_pixel_put(env, x, y, 0X000000FF);
+			my_mlx_pixel_put(env, x, y, color_px(env, x, y));
 			++y;
 		}
 		++x;

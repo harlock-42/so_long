@@ -9,14 +9,15 @@
 # include "./mlx.h"
 
 # define CHAR_MAP	"01CEP"
-# define CASE_SIZE	4
+# define CASE_SIZE	64
 
 /*
 ** ENGINE
 */
 
-int	engine(t_env *env);
-void	new_image(t_env *env);
+int		engine(t_env *env);
+unsigned int	color_px(t_env *env, int x, int y);
+void		new_image(t_env *env);
 
 /*
 ** PARSER
