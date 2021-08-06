@@ -9,7 +9,7 @@
 # include "./mlx.h"
 
 # define CHAR_MAP	"01CEP"
-# define CASE_SIZE	64
+# define CASE_SIZE	16
 
 /*
 ** ENGINE
@@ -18,6 +18,12 @@
 int		engine(t_env *env);
 unsigned int	color_px(t_env *env, int x, int y);
 void		new_image(t_env *env);
+
+/*
+** LOAD_SPRITE
+*/
+
+int		load_sprite(t_env *env);
 
 /*
 ** PARSER
@@ -30,7 +36,6 @@ int	is_map_closed(char **map);
 int	is_map_rectangular(char **map);
 int	parser(t_env *env, char *file_name);
 void	get_map_size(t_env *env);
-
 
 /*
 ** UTILS

@@ -3,6 +3,8 @@
 static	void	start_game(t_env *env)
 {
 	env->mlx.mlx = mlx_init();
+	if (load_sprite(env))
+		return ;
 	env->data.width *= CASE_SIZE;
 	env->data.height *= CASE_SIZE;
 	env->mlx.win = mlx_new_window(env->mlx.mlx, env->data.width,

@@ -26,11 +26,25 @@ typedef	struct	s_img
 	int		color;
 }		t_img;
 
+typedef	struct	s_sprite
+{
+	char		*path_name;
+	unsigned int	*ptr;
+	unsigned int	*img;
+	unsigned int	*sprite;
+	int		line_length;
+	int		bpp;
+	int		endian;
+	int		width;
+	int		height;
+}		t_sprite;
+
 typedef	struct	s_env
 {
-	t_data	data;
-	t_img	img;
-	t_mlx	mlx;
+	t_data		data;
+	t_img		img;
+	t_mlx		mlx;
+	t_sprite	sprite;
 }		t_env;
 
 #endif

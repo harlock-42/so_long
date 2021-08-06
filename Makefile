@@ -31,6 +31,7 @@ SRC		+=	get_map_size.c
 SRC		+=	is_character_in_the_map.c
 SRC		+=	is_map_closed.c
 SRC		+=	is_map_rectangular.c
+SRC		+=	load_sprite.c
 SRC		+=	main.c
 SRC		+=	my_mlx_pixel_put.c
 SRC		+=	new_image.c
@@ -42,6 +43,7 @@ OBJ_PATH	=	./.obj/
 
 vpath %.c srcs/
 vpath %.c srcs/engine/
+vpath %.c srcs/load_sprite/
 vpath %.c srcs/parser/
 vpath %.c srcs/parser/checker/
 vpath %.c srcs/utils/

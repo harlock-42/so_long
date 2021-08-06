@@ -1,0 +1,25 @@
+/* XPM */
+static char *floor_pkn[] = {
+/* columns rows colors chars-per-pixel */
+"16 16 3 1 ",
+"  c #28F828",
+". c #58B8F8",
+"X c #F8F8F8",
+/* pixels */
+" XXXXXX .X X.X.X",
+"XXX..XXXXXX X.X.",
+"XX.XX.XXXXXX XXX",
+" .X.. . X X XXX.",
+"X.X   .X.X X.X.X",
+".X.  .X.XXX.X XX",
+"X......X.X X.XXX",
+" XX..XX X.X.XXX.",
+".X X.X.X.X X.X.X",
+"XXX X.X.XXX X.X.",
+"XXXX XXXXXXX XXX",
+"X X XXX.X X XXX.",
+".X X.X.X.X X.X.X",
+"XXX.X XXXXX.X XX",
+".X X.XXX.X X.XXX",
+"X.X.XXX.X.X.XXX."
+};
