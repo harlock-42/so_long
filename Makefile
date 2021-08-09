@@ -26,13 +26,16 @@ LFLAGS		=	-lm -lbsd -lX11 -lXext
 SRC		+=	check_map.c
 SRC		+=	color_px.c
 SRC		+=	engine.c
+SRC		+=	escape_game.c
 SRC		+=	get_map.c
 SRC		+=	get_map_size.c
 SRC		+=	is_character_in_the_map.c
 SRC		+=	is_map_closed.c
 SRC		+=	is_map_rectangular.c
+SRC		+=	key.c
 SRC		+=	load_sprite.c
 SRC		+=	main.c
+SRC		+=	move.c
 SRC		+=	my_mlx_pixel_put.c
 SRC		+=	new_image.c
 SRC		+=	parser.c
@@ -43,7 +46,9 @@ OBJ_PATH	=	./.obj/
 
 vpath %.c srcs/
 vpath %.c srcs/engine/
+vpath %.c srcs/engine/move/
 vpath %.c srcs/load_sprite/
+vpath %.c srcs/key/
 vpath %.c srcs/parser/
 vpath %.c srcs/parser/checker/
 vpath %.c srcs/utils/
