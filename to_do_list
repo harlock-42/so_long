@@ -2,5 +2,4 @@ leaks images mlx
 
 segfault lorsque le sprite n existe pas
 
-pour red_cross et escape_game,
-pour l instant sa exit(0), il faut free env et clear et destroy la window
+refaire sprite right

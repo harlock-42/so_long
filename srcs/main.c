@@ -7,6 +7,8 @@ static	int	game(t_env *env)
 	new_image(env);
 	engine(env);
 	mlx_put_image_to_window(env->mlx.mlx, env->mlx.win, env->img.img, 0, 0);
+	if (env->data.prev_case == 'E')
+		escape_game(env);
 	return (0);
 }
 
@@ -22,7 +24,6 @@ static	void	start_game(t_env *env)
 	mlx_hook(env->mlx.win, 2, 1L << 0, key_pressed, env);
 	mlx_hook(env->mlx.win, 3, 1L << 1, key_released, env);
 	mlx_hook(env->mlx.win, 17, 1L << 17, red_cross, env);
-	mlx_hook(env->mlx.win, 2, 1L << 0, key_pressed, env);
 	mlx_loop_hook(env->mlx.mlx, game, env);
 	mlx_loop(env->mlx.mlx);
 }
@@ -34,6 +35,7 @@ static	void	init_env(t_env *env)
 	ft_bzero(&env->move, sizeof(env->move));
 	ft_bzero(&env->play, sizeof(env->play));
 	ft_bzero(&env->mlx, sizeof(env->mlx));
+	env->play.spawn = 2;
 }
 
 int	main(int argc, char **argv)

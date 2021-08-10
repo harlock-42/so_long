@@ -5,10 +5,11 @@ static	char	*cat_buff(char *str, void *buff)
 	char	*new;
 	char	*tmp;
 
+	new = NULL;
 	if (str)
 		new = ft_strdup(str);
 	else
-		return ft_strdup((char *)buff);
+		return (ft_strdup((char *)buff));
 	tmp = new;
 	new = ft_strjoin(new, (char *)buff);
 	free(tmp);

@@ -7,8 +7,27 @@ enum		e_sprite
 	WALL,
 	COLL,
 	EXIT,
-	P_DOWN,
+	P_DOWN_0,
+	P_DOWN_1,
+	P_DOWN_2,
+	P_LEFT_0,
+	P_LEFT_1,
+	P_LEFT_2,
+	P_UP_0,
+	P_UP_1,
+	P_UP_2,
+	P_RIGHT_0,
+	P_RIGHT_1,
+	P_RIGHT_2,
 	NB_SPRITE
+};
+
+enum		e_spawn
+{
+	NORTH = 0,
+	EAST,
+	SOUTH,
+	WEST
 };
 
 typedef	struct	s_mlx
@@ -56,13 +75,17 @@ typedef	struct	s_move
 	int	down;
 	int	right;
 	int	left;
+	int	lock;
 }		t_move;
 
 typedef	struct	s_play
 {
 	int	pos_x;
 	int	pos_y;
+	int	move_x;
+	int	move_y;
 	int	count;
+	int	spawn;
 }		t_play;
 
 typedef	struct	s_env

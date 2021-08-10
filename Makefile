@@ -23,12 +23,15 @@ CFLAGS	=	-Werror -Wextra -Wall -c -g3
 
 LFLAGS		=	-lm -lbsd -lX11 -lXext
 
+SRC		+=	calcul_move.c
 SRC		+=	check_map.c
 SRC		+=	color_px.c
+SRC		+=	color_sprite_px.c
 SRC		+=	engine.c
 SRC		+=	escape_game.c
 SRC		+=	get_map.c
 SRC		+=	get_map_size.c
+SRC		+=	get_px_color_spawn.c
 SRC		+=	is_character_in_the_map.c
 SRC		+=	is_map_closed.c
 SRC		+=	is_map_rectangular.c
@@ -38,14 +41,17 @@ SRC		+=	main.c
 SRC		+=	move.c
 SRC		+=	my_mlx_pixel_put.c
 SRC		+=	new_image.c
+SRC		+=	paint_moving_sprite.c
 SRC		+=	parser.c
 SRC		+=	print_map.c
 SRC		+=	sl_error.c
+SRC		+=	wich_case_map.c
 
 OBJ_PATH	=	./.obj/
 
 vpath %.c srcs/
 vpath %.c srcs/engine/
+vpath %.c srcs/engine/calcul_move/
 vpath %.c srcs/engine/move/
 vpath %.c srcs/load_sprite/
 vpath %.c srcs/key/
