@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 static	void	move_player(t_env *env, int spawn)
 {
