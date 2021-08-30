@@ -2,6 +2,11 @@
 
 static	void	move_player(t_env *env, int spawn)
 {
+	int	i;
+
+	i = 100000;
+	while (i)
+		--i;
 	if (spawn == EAST)
 		++env->play.move_x;
 	else if (spawn == WEST)
@@ -38,7 +43,6 @@ static	void	write_new_pos_play_in_map(t_env *env, int spawn)
 		env->data.map[env->play.pos_y][env->play.pos_x] = '0';
 		--env->play.pos_y;
 	}
-
 }
 
 static	int	is_move_finished(t_env *env)

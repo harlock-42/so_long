@@ -1,17 +1,18 @@
 #include "so_long.h"
 
-static	char	*cat_buff(char *str, void *buff)
+static	char	*cat_buff(char *str, char *buff)
 {
 	char	*new;
 	char	*tmp;
 
 	new = NULL;
+	tmp = NULL;
 	if (str)
 		new = ft_strdup(str);
 	else
-		return (ft_strdup((char *)buff));
+		return (ft_strdup(buff));
 	tmp = new;
-	new = ft_strjoin(new, (char *)buff);
+	new = ft_strjoin(new, buff);
 	free(tmp);
 	return (new);
 }
@@ -34,11 +35,45 @@ static	char	*read_map(int fd)
 			free(str);
 			return (NULL);
 		}
-		str = cat_buff(str, buffer);
+		str = cat_buff(str, (char *)buffer);
 		if (str == NULL)
 			return (NULL);
 	}
 	return (str);
+}
+
+static	int	is_only_lf(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str && str[i])
+	{
+		if (str[i] != '\n')
+			return (NO);
+		++i;
+	}
+	return (YES);
+}
+
+static	int	get_fd(char *path)
+{
+	int	fd;
+
+	fd = open(path, O_DIRECTORY);
+	if (fd != (-1))
+	{
+		sl_error("file.map should not be a directory");
+		return (-1);
+	}
+	fd = open(path, O_RDONLY);
+	if (fd == (-1))
+	{
+		ft_printf("%sError%s\n", RED, NC);
+		perror("");
+		return (-1);
+	}
+	return (fd);
 }
 
 char	**get_map(char *file_name)
@@ -48,13 +83,15 @@ char	**get_map(char *file_name)
 	char	**map;
 
 	str = NULL;
-	fd = open(file_name, O_RDONLY);
+	fd = get_fd(file_name);
 	if (fd == (-1))
+		return (NULL);
+	str = read_map(fd);
+	if (is_only_lf(str) == YES)
 	{
-		perror("");
+		sl_error("There is no map in file.ber");
 		return (NULL);
 	}
-	str = read_map(fd);
 	map = ft_split(str, '\n');
 	free(str);
 	if (map == NULL)

@@ -36,8 +36,17 @@ static	void	paint_one_px(t_env *env, int y, int x)
 		color = color_sprite_px(x, y, env, COLL);
 	else if (case_map == 'E')
 		color = color_sprite_px(x, y, env, EXIT);
-	if (color != 0)
+	if (case_map != 'P' && color != 0)
 		my_mlx_pixel_put(env, x, y, color);
+	if (case_map == 'P')
+	{
+		color = color_player_px(x, y, env);
+		env->move.lock = calcul_move(env, env->move.lock);
+		if (color != 0)
+			my_mlx_pixel_put(env, x + env->play.move_x,
+				y + env->play.move_y, color);
+
+	}
 }
 
 int	engine(t_env *env)
@@ -63,6 +72,5 @@ int	engine(t_env *env)
 		}
 		++x;
 	}
-	paint_moving_sprite(env);
 	return (0);
 }

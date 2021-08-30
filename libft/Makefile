@@ -57,6 +57,7 @@ SRC_NAME	+=	ft_strcmp.c
 SRC_NAME	+=	ft_strcpy.c
 SRC_NAME	+=	ft_strdup.c
 SRC_NAME	+=	ft_strjoin.c
+SRC_NAME	+=	ft_strjoin_free.c
 SRC_NAME	+=	ft_strlcat.c
 SRC_NAME	+=	ft_strlcpy.c
 SRC_NAME	+=	ft_strldup.c

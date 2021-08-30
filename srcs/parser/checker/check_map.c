@@ -13,7 +13,7 @@ static	int	are_char_in_map_valid(char **map)
 		{
 			if (c_is_str(map[j][i], CHAR_MAP) == NO)
 			{
-				ft_printf("%sError%s : ", RED, NC);
+				ft_printf("%sError%s\n", RED, NC);
 				ft_printf("line %d, char %d\n", j, i);
 				ft_printf("invalid charactere (\'%c\')", map[j][i]);
 				ft_printf(" in the map\n");

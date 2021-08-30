@@ -56,7 +56,6 @@ static	char	**get_all_the_path_name(char **str)
 	str[P_RIGHT_0] = ft_strdup("./sprite/ash_right_0.xpm");
 	str[P_RIGHT_1] = ft_strdup("./sprite/ash_right_1.xpm");
 	str[P_RIGHT_2] = ft_strdup("./sprite/ash_right_2.xpm");
-	str[NB_SPRITE] = NULL;
 	return (str);
 }
 

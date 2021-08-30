@@ -26,6 +26,7 @@ LFLAGS		=	-lm -lbsd -lX11 -lXext
 SRC		+=	calcul_move.c
 SRC		+=	check_map.c
 SRC		+=	color_px.c
+SRC		+=	color_player_px.c
 SRC		+=	color_sprite_px.c
 SRC		+=	engine.c
 SRC		+=	escape_game.c

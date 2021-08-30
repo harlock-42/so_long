@@ -27,7 +27,7 @@ static	int	is_only_one_player(char **map)
 	return (YES);
 }
 
-static	int	is_only_one_exit(char **map)
+static	int	there_is_exit(char **map)
 {
 	int	exit;
 	int	j;
@@ -47,9 +47,7 @@ static	int	is_only_one_exit(char **map)
 		i = 0;
 		++j;
 	}
-	if (exit > 1)
-		return (sl_error("the map must has only one exit (E)"));
-	else if (exit == 0)
+	if (exit == 0)
 		return (sl_error("exit (E) is missing in the map"));
 	return (YES);
 }
@@ -82,7 +80,7 @@ int	is_character_in_the_map(char **map)
 {
 	if (is_only_one_player(map) == NO)
 		return (NO);
-	if (is_only_one_exit(map) == NO)
+	if (there_is_exit(map) == NO)
 		return (NO);
 	if (there_is_collectible(map) == NO)
 		return (NO);

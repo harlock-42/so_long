@@ -68,6 +68,8 @@ int	parser(t_env *env, char *file_name)
 	if (check_file_name(file_name))
 		return (sl_error("map file is not a \".ber\" extention"));
 	env->data.map = get_map(file_name);
+	if (env->data.map == NULL)
+		return (-1);
 	if (check_map(env->data.map))
 	{
 		free_tab(env->data.map);
