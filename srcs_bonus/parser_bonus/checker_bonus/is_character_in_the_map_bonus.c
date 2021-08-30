@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   is_character_in_the_map_bonus.c                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:15:20 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:16:14 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	int	is_only_one_player(char **map)
@@ -53,6 +65,7 @@ static	int	is_only_one_exit(char **map)
 		return (sl_error("exit (E) is missing in the map"));
 	return (YES);
 }
+
 static	int	there_is_collectible(char **map)
 {
 	int	col;

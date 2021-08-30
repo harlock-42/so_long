@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:09:27 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:11:00 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	void	go_right(t_env *env)
 {
-	env->data.prev_case =
-		env->data.map[env->play.pos_y][env->play.pos_x + 1];
+	env->data.prev_case
+		= env->data.map[env->play.pos_y][env->play.pos_x + 1];
 	env->play.spawn = 1;
 	if (env->data.map[env->play.pos_y][env->play.pos_x + 1] == '1'
 		|| (env->data.map[env->play.pos_y][env->play.pos_x + 1] == 'E'
@@ -17,8 +29,8 @@ static	void	go_right(t_env *env)
 
 static	void	go_left(t_env *env)
 {
-	env->data.prev_case =
-		env->data.map[env->play.pos_y][env->play.pos_x - 1];
+	env->data.prev_case
+		= env->data.map[env->play.pos_y][env->play.pos_x - 1];
 	env->play.spawn = 3;
 	if (env->data.map[env->play.pos_y][env->play.pos_x - 1] == '1'
 		|| (env->data.map[env->play.pos_y][env->play.pos_x - 1] == 'E'
@@ -32,8 +44,8 @@ static	void	go_left(t_env *env)
 
 static	void	go_up(t_env *env)
 {
-	env->data.prev_case =
-		env->data.map[env->play.pos_y - 1][env->play.pos_x];
+	env->data.prev_case
+		= env->data.map[env->play.pos_y - 1][env->play.pos_x];
 	env->play.spawn = 0;
 	if (env->data.map[env->play.pos_y - 1][env->play.pos_x] == '1'
 		|| (env->data.map[env->play.pos_y - 1][env->play.pos_x] == 'E'
@@ -47,8 +59,8 @@ static	void	go_up(t_env *env)
 
 static	void	go_down(t_env *env)
 {
-	env->data.prev_case =
-		env->data.map[env->play.pos_y + 1][env->play.pos_x];
+	env->data.prev_case
+		= env->data.map[env->play.pos_y + 1][env->play.pos_x];
 	env->play.spawn = 2;
 	if (env->data.map[env->play.pos_y + 1][env->play.pos_x] == '1'
 		|| (env->data.map[env->play.pos_y + 1][env->play.pos_x] == 'E'

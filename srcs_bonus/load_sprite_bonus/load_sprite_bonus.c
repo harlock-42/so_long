@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load_sprite_bonus.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:12:16 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:13:47 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	void	sprite_cpy(t_env *env, int i)
@@ -17,7 +29,7 @@ static	void	sprite_cpy(t_env *env, int i)
 int	load_one_sprite(t_env *env, char *path_name, int i)
 {
 	env->sprite.img[i] = mlx_xpm_file_to_image(env->mlx.mlx,
-		path_name, &env->sprite.width[i], &env->sprite.height[i]);
+			path_name, &env->sprite.width[i], &env->sprite.height[i]);
 	if (env->sprite.img[i] == NULL)
 	{
 		ft_printf("%sError%s : ", RED, NC);
@@ -25,12 +37,12 @@ int	load_one_sprite(t_env *env, char *path_name, int i)
 		return (-1);
 	}
 	env->sprite.ptr[i] = (unsigned int *)mlx_get_data_addr(env->sprite.img[i],
-		&env->sprite.bpp[i], &env->sprite.line_length[i],
+			&env->sprite.bpp[i], &env->sprite.line_length[i],
 			&env->sprite.endian[i]);
 	if (env->sprite.ptr[i] == NULL)
 		return (-1);
 	env->sprite.sprite[i] = ft_calloc(env->sprite.width[i]
-		* env->sprite.height[i], sizeof(unsigned int));
+			* env->sprite.height[i], sizeof(unsigned int));
 	if (env->sprite.sprite[i] == NULL)
 		return (-1);
 	sprite_cpy(env, i);
@@ -81,15 +93,12 @@ static	char	**get_path_name(char **str)
 int	load_sprite(t_env *env)
 {
 	char	**path_name;
-	int	i;
+	int		i;
 
 	ft_bzero(&path_name, sizeof(char **));
 	path_name = get_path_name(path_name);
 	if (path_name == NULL)
-	{
-		sl_error("memory space is not enough to load sprites");
-		return (-1);
-	}
+		return (sl_error("memory space is not enough to load sprites"));
 	i = 0;
 	while (i < NB_SPRITE)
 	{

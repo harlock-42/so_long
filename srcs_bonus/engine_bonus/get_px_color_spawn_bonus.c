@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_px_color_spawn_bonus.c                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:01:48 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:02:08 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	int	convert_move_in_per_cent(int move)
@@ -12,7 +24,7 @@ static	int	convert_move_in_per_cent(int move)
 
 unsigned int	get_px_color_spawn_south(t_env *env, int x, int y)
 {
-	int	ind_move;
+	int				ind_move;
 	unsigned int	color;
 
 	ind_move = convert_move_in_per_cent(env->play.move_y);
@@ -29,7 +41,7 @@ unsigned int	get_px_color_spawn_south(t_env *env, int x, int y)
 
 unsigned int	get_px_color_spawn_west(t_env *env, int x, int y)
 {
-	int	ind_move;
+	int				ind_move;
 	unsigned int	color;
 
 	ind_move = convert_move_in_per_cent(env->play.move_x);
@@ -46,7 +58,7 @@ unsigned int	get_px_color_spawn_west(t_env *env, int x, int y)
 
 unsigned int	get_px_color_spawn_north(t_env *env, int x, int y)
 {
-	int	ind_move;
+	int				ind_move;
 	unsigned int	color;
 
 	ind_move = convert_move_in_per_cent(env->play.move_y);
@@ -63,7 +75,7 @@ unsigned int	get_px_color_spawn_north(t_env *env, int x, int y)
 
 unsigned int	get_px_color_spawn_east(t_env *env, int x, int y)
 {
-	int	ind_move;
+	int				ind_move;
 	unsigned int	color;
 
 	ind_move = convert_move_in_per_cent(env->play.move_x);
@@ -77,4 +89,3 @@ unsigned int	get_px_color_spawn_east(t_env *env, int x, int y)
 		color = color_sprite_px(x, y, env, P_RIGHT_0);
 	return (color);
 }
-

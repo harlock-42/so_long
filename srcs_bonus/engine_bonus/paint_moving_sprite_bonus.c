@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   paint_moving_sprite_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:06:17 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:06:46 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	unsigned int	paint_player(t_env *env, int y, int x)
 {
-	char	case_map;
+	char			case_map;
 	unsigned int	color;
 
 	case_map = wich_case_map(env, y, x);

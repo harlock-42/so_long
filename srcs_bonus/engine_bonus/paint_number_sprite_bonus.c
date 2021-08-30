@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   paint_number_sprite_bonus.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:06:53 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:08:48 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	int	wich_case(int px)
@@ -44,8 +56,8 @@ static	unsigned int	get_color_number(int x, int y, t_env *env, int nb)
 static	unsigned int	paint_number(t_env *env, int x, int y)
 {
 	unsigned int	color;
-	int	end_map;
-	int	case_x;
+	int				end_map;
+	int				case_x;
 
 	case_x = wich_case(x);
 	end_map = wich_case(env->data.width);

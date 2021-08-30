@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:00:05 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:00:16 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	int	game(t_env *env)
@@ -18,7 +30,7 @@ static	void	start_game(t_env *env)
 	env->data.width *= CASE_SIZE;
 	env->data.height *= CASE_SIZE;
 	env->mlx.win = mlx_new_window(env->mlx.mlx, env->data.width,
-		env->data.height, "so_long");
+			env->data.height, "so_long");
 	mlx_hook(env->mlx.win, 2, 1L << 0, key_pressed, env);
 	mlx_hook(env->mlx.win, 3, 1L << 1, key_released, env);
 	mlx_hook(env->mlx.win, 17, 1L << 17, red_cross, env);

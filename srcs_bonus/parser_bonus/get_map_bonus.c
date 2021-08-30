@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_map_bonus.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:14:06 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:14:17 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	char	*cat_buff(char *str, void *buff)
@@ -20,7 +32,7 @@ static	char	*read_map(int fd)
 {
 	char	*str;
 	char	*buffer[BUFFER_SIZE];
-	int	ret;
+	int		ret;
 
 	ret = 0;
 	str = NULL;
@@ -43,7 +55,7 @@ static	char	*read_map(int fd)
 
 char	**get_map(char *file_name)
 {
-	int	fd;
+	int		fd;
 	char	*str;
 	char	**map;
 

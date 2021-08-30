@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   engine_bonus.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:00:58 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:01:36 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	unsigned int	paint_floor(t_env *env, int x, int y)
@@ -9,10 +21,9 @@ static	unsigned int	paint_floor(t_env *env, int x, int y)
 	return (color);
 }
 
-
 static	unsigned int	paint_one_px(t_env *env, int y, int x)
 {
-	char		case_map;
+	char			case_map;
 	unsigned int	color;
 
 	color = 0;
@@ -34,8 +45,8 @@ static	unsigned int	paint_one_px(t_env *env, int y, int x)
 int	engine(t_env *env)
 {
 	unsigned int	color;
-	int	x;
-	int	y;
+	int				x;
+	int				y;
 
 	y = 0;
 	move(env);
@@ -53,8 +64,5 @@ int	engine(t_env *env)
 		++y;
 	}
 	paint_moving_sprite(env);
-	/*
-	paint_numbers_sprite(env);
-	*/
 	return (0);
 }

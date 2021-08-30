@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calcul_move_bonus.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 17:09:14 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 17:11:25 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long_bonus.h"
 
 static	void	move_player(t_env *env, int spawn)
@@ -38,7 +50,6 @@ static	void	write_new_pos_play_in_map(t_env *env, int spawn)
 		env->data.map[env->play.pos_y][env->play.pos_x] = '0';
 		--env->play.pos_y;
 	}
-
 }
 
 static	int	is_move_finished(t_env *env)
