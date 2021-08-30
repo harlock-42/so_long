@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   engine.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 16:12:16 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 16:12:58 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static	void	paint_floor(t_env *env)
 {
-	int		x;
-	int		y;
+	int				x;
+	int				y;
 	unsigned int	color;
 
 	x = 0;
@@ -24,7 +36,7 @@ static	void	paint_floor(t_env *env)
 
 static	void	paint_one_px(t_env *env, int y, int x)
 {
-	char		case_map;
+	char			case_map;
 	unsigned int	color;
 
 	case_map = '\0';
@@ -45,16 +57,15 @@ static	void	paint_one_px(t_env *env, int y, int x)
 		if (color != 0)
 			my_mlx_pixel_put(env, x + env->play.move_x,
 				y + env->play.move_y, color);
-
 	}
 }
 
 int	engine(t_env *env)
 {
-	int		x;
-	int		y;
+	int				x;
+	int				y;
 	unsigned int	color;
-	char		case_map;
+	char			case_map;
 
 	x = 0;
 	y = 0;

@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   color_px.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 16:11:32 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 16:11:54 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 unsigned int	color_px(t_env *env, int x, int y)
 {
 	unsigned int	color;
-	int	i;
-	int	j;
+	int				i;
+	int				j;
 
 	color = 0;
 	i = x / CASE_SIZE;

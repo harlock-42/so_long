@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_map.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 16:30:23 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 16:30:46 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static	char	*cat_buff(char *str, char *buff)
@@ -21,7 +33,7 @@ static	char	*read_map(int fd)
 {
 	char	*str;
 	char	*buffer[BUFFER_SIZE];
-	int	ret;
+	int		ret;
 
 	ret = 0;
 	str = NULL;
@@ -78,7 +90,7 @@ static	int	get_fd(char *path)
 
 char	**get_map(char *file_name)
 {
-	int	fd;
+	int		fd;
 	char	*str;
 	char	**map;
 

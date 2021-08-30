@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   paint_moving_sprite.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/30 16:22:47 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/30 16:23:30 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 static	void	paint_player(t_env *env, int y, int x)
 {
-	char	case_map;
+	char			case_map;
 	unsigned int	color;
 
 	case_map = wich_case_map(env, y, x);
@@ -33,7 +45,7 @@ void	paint_moving_sprite(t_env *env)
 	while (x < env->data.width)
 	{
 		y = 0;
-		while(y < env->data.height)
+		while (y < env->data.height)
 		{
 			paint_player(env, y, x);
 			++y;
