@@ -16,7 +16,7 @@ void	new_image(t_env *env)
 {
 	env->img.img = mlx_new_image(env->mlx.mlx, env->data.width,
 			env->data.height);
-	if (env.img.img == NULL)
+	if (env->img.img == NULL)
 	{
 		ft_printf("Error\nGenerating new image failed\n");
 		exit(1);
