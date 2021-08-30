@@ -2,11 +2,6 @@
 
 static	void	move_player(t_env *env, int spawn)
 {
-	int	i;
-
-	i = 100000;
-	while (i)
-		--i;
 	if (spawn == EAST)
 		++env->play.move_x;
 	else if (spawn == WEST)
