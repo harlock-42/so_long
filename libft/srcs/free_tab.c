@@ -1,17 +1,16 @@
 #include "./../includes/libft.h"
 
-void	*free_tab(char **str)
+void    **free_tab(char **tab)
 {
-	int	i;
+    int     i;
 
-	i = 0;
-	while (str && str[i])
-	{
-		if (str)
-			free(str[i]);
-		++i;
-	}
-	if (str)
-		free(str);
-	return (NULL);
+    i = 0;
+    while (tab && tab[i])
+    {
+            free(tab[i]);
+            ++i;
+    }
+    free(tab);
+    tab = NULL;
+    return (NULL);
 }

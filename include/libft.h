@@ -6,7 +6,7 @@
 /*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 15:06:03 by tallaire          #+#    #+#             */
-/*   Updated: 2021/07/01 15:10:14 by tallaire         ###   ########.fr       */
+/*   Updated: 2021/08/31 18:20:54 by tallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int				ft_strcmp(char *s1, char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
-long long		ft_atoll(const char *str);
+long	long		ft_atoll(const char *str);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t			ft_strlen(const char *str);
@@ -57,7 +57,6 @@ char			*ft_strchr(const char *s, int c);
 char			*ft_strcpy(char *dst, char const *src);
 char			*ft_strdup(const char *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
-char			*ft_strjoin_free(char const *s1, char const *s2, int nb);
 char			*ft_strldup(char *str, size_t size);
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char			*ft_strnstr(const char *haystack, const char *needle,
@@ -92,9 +91,10 @@ int				ft_error(char **s1, char **s2);
 
 int				c_is_alnum(int c);
 int				c_is_str(int c, char *str);
+int				where_is_c(int c, char *str);
 void			free_get_file(char **txt);
-void			*free_tab(char **str);
 void			print_binary(long long int value, int nb_octet);
 char			**ft_split_slash(char *str, char *sep);
+void			**free_tab(char **tab);
 
 #endif

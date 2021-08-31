@@ -1,5 +1,17 @@
-#ifndef KEYCODE_H
-# define KEYCODE_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keycode_bonus.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/31 17:51:50 by tallaire          #+#    #+#             */
+/*   Updated: 2021/08/31 17:56:59 by tallaire         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef KEYCODE_BONUS_H
+# define KEYCODE_BONUS_H
 
 # define KEY_A				97
 # define KEY_D				100

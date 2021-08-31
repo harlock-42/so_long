@@ -6,7 +6,7 @@
 /*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:26:43 by tallaire          #+#    #+#             */
-/*   Updated: 2021/08/30 16:29:31 by tallaire         ###   ########.fr       */
+/*   Updated: 2021/08/31 18:21:20 by tallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,6 +102,6 @@ int	load_sprite(t_env *env)
 			return (-1);
 		++i;
 	}
-	path_name = free_tab(path_name);
+	path_name = (char **)free_tab(path_name);
 	return (0);
 }
