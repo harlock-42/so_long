@@ -15,13 +15,13 @@
 static	void	move_player(t_env *env, int spawn)
 {
 	if (spawn == EAST)
-		++env->play.move_x;
+		env->play.move_x += env->play.speed;
 	else if (spawn == WEST)
-		--env->play.move_x;
+		env->play.move_x -= env->play.speed;
 	else if (spawn == SOUTH)
-		++env->play.move_y;
+		env->play.move_y += env->play.speed;
 	else if (spawn == NORTH)
-		--env->play.move_y;
+		env->play.move_y -= env->play.speed;
 }
 
 static	void	write_new_pos_play_in_map(t_env *env, int spawn)
@@ -65,7 +65,7 @@ static	int	is_move_finished(t_env *env)
 		y = env->play.move_y * (-1);
 	else
 		y = env->play.move_y;
-	if (x == CASE_SIZE || y == CASE_SIZE)
+	if (x + env->play.speed >= CASE_SIZE || y + env->play.speed >= CASE_SIZE)
 		return (YES);
 	return (NO);
 }

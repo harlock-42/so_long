@@ -12,7 +12,7 @@
 
 #include "so_long_bonus.h"
 
-static	int	wich_case(int px)
+int	wich_case_px(int px)
 {
 	int	case_map;
 	int	count;
@@ -27,7 +27,7 @@ static	int	wich_case(int px)
 	return (count);
 }
 
-static	unsigned int	get_color_number(int x, int y, t_env *env, int nb)
+unsigned int	get_color_number(int x, int y, t_env *env, int nb)
 {
 	if (env->play.count > 99)
 		return (color_sprite_px(x, y, env, NINE));
@@ -51,32 +51,4 @@ static	unsigned int	get_color_number(int x, int y, t_env *env, int nb)
 		return (color_sprite_px(x, y, env, HEIGHT));
 	else
 		return (color_sprite_px(x, y, env, NINE));
-}
-
-static	unsigned int	paint_number(t_env *env, int x, int y)
-{
-	unsigned int	color;
-	int				end_map;
-	int				case_x;
-
-	case_x = wich_case(x);
-	end_map = wich_case(env->data.width);
-	if (wich_case(y) == 0 && (case_x == end_map))
-	{
-		color = get_color_number(x, y, env, env->play.count % 10);
-		my_mlx_pixel_put(env, x, y, color);
-		return (color);
-	}
-	if (env->play.count > 9 && wich_case(y) == 0 && case_x == end_map - 1)
-	{
-		color = get_color_number(x, y, env, (env->play.count / 10) % 10);
-		my_mlx_pixel_put(env, x, y, color);
-		return (color);
-	}
-	return (0);
-}
-
-unsigned int	paint_numbers_sprite(t_env *env, int x, int y)
-{
-	return (paint_number(env, x, y));
 }

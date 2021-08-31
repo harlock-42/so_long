@@ -12,6 +12,12 @@
 
 #include "so_long_bonus.h"
 
+/*
+static int	get_sqrt_round()
+{
+
+}
+*/
 void	get_map_size(t_env *env)
 {
 	int	j;
@@ -21,4 +27,6 @@ void	get_map_size(t_env *env)
 		++j;
 	env->data.height = j;
 	env->data.width = (int)ft_strlen(env->data.map[0]);
+	env->play.speed = (env->data.width * env->data.height) / 8;
+	ft_printf("%d\n", env->play.speed);
 }

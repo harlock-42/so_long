@@ -12,13 +12,32 @@
 
 #include "so_long_bonus.h"
 
-static	unsigned int	paint_floor(t_env *env, int x, int y)
+static	int	is_case_number(t_env *env, int x, int y)
 {
-	unsigned int	color;
+	int	end_map;
+	int	case_x;
 
-	color = color_sprite_px(x, y, env, FLOOR);
-	my_mlx_pixel_put(env, x, y, color);
-	return (color);
+	case_x = wich_case_px(x);
+	end_map = wich_case_px(env->data.width);
+	if (wich_case_px(y) == 0 && (case_x == end_map))
+		return (YES);
+	if (env->play.count > 9 && wich_case_px(y) == 0 && case_x == end_map - 1)
+		return (YES);
+	return (NO);
+}
+
+static	unsigned int	get_number_color(int x, int y, t_env *env)
+{
+	int	end_map;
+	int	case_x;
+
+	case_x = wich_case_px(x);
+	end_map = wich_case_px(env->data.width);
+	if (wich_case_px(y) == 0 && (case_x == end_map))
+		return (get_color_number(x, y, env, env->play.count % 10));
+	if (env->play.count > 9 && wich_case_px(y) == 0 && case_x == end_map - 1)
+		return (get_color_number(x, y, env, env->play.count / 10));
+	return (0);
 }
 
 static	unsigned int	paint_one_px(t_env *env, int y, int x)
@@ -29,16 +48,21 @@ static	unsigned int	paint_one_px(t_env *env, int y, int x)
 	color = 0;
 	case_map = '\0';
 	case_map = wich_case_map(env, y, x);
-	if (case_map == '1')
+	if (is_case_number(env, x, y) == YES)
+		color = get_number_color(x, y, env);
+	else if (case_map == '1')
 		color = color_sprite_px(x, y, env, WALL);
 	else if (case_map == 'C')
 		color = color_sprite_px(x, y, env, COLL);
 	else if (case_map == 'E')
 		color = color_sprite_px(x, y, env, EXIT);
-	else
-		color = 0;
 	if (color != 0)
 		my_mlx_pixel_put(env, x, y, color);
+	else
+	{
+		color = color_sprite_px(x, y, env, FLOOR);
+		my_mlx_pixel_put(env, x, y, color);
+	}
 	return (color);
 }
 
@@ -55,10 +79,7 @@ int	engine(t_env *env)
 		x = 0;
 		while (x < env->data.width)
 		{
-			color = 0;
-			color = paint_floor(env, x, y);
 			color = paint_one_px(env, y, x);
-			color = paint_numbers_sprite(env, x, y);
 			++x;
 		}
 		++y;

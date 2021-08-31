@@ -94,6 +94,7 @@ typedef	struct	s_play
 	int	pos_y;
 	int	move_x;
 	int	move_y;
+	int	speed;
 	int	count;
 	int	spawn;
 }		t_play;

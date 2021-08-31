@@ -11,6 +11,7 @@
 
 # define CHAR_MAP	"01CEP"
 # define CASE_SIZE	64
+# define SPEED		8
 
 /*
 ** ENGINE
@@ -19,14 +20,15 @@
 char	wich_case_map(t_env *env, int y, int x);
 int		calcul_move(t_env *env, int lock);
 int		engine(t_env *env);
+int		wich_case_px(int px);
 unsigned int	color_px(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_south(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_west(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_north(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_east(t_env *env, int x, int y);
+unsigned int	get_color_number(int x, int y, t_env *env, int nb);
 void		new_image(t_env *env);
 void		paint_moving_sprite(t_env *env);
-unsigned int	paint_numbers_sprite(t_env *env, int x, int y);
 
 /*
 ** KEY

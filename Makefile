@@ -23,7 +23,6 @@ CFLAGS	=	-Werror -Wextra -Wall -c -g3
 
 LFLAGS		=	-lm -lbsd -lX11 -lXext
 
-SRC		+=	calcul_move.c
 SRC		+=	check_map.c
 SRC		+=	color_px.c
 SRC		+=	color_player_px.c
@@ -79,7 +78,6 @@ OBJ_PATH_BONUS	=	./.obj_bonus/
 
 vpath %.c srcs/
 vpath %.c srcs/engine/
-vpath %.c srcs/engine/calcul_move/
 vpath %.c srcs/engine/move/
 vpath %.c srcs/load_sprite/
 vpath %.c srcs/key/

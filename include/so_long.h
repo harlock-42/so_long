@@ -17,7 +17,6 @@
 */
 
 char	wich_case_map(t_env *env, int y, int x);
-int		calcul_move(t_env *env, int lock);
 int		engine(t_env *env);
 unsigned int	color_px(t_env *env, int x, int y);
 unsigned int	color_player_px(int x, int y, t_env *env);
@@ -25,8 +24,8 @@ unsigned int	get_px_color_spawn_south(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_west(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_north(t_env *env, int x, int y);
 unsigned int	get_px_color_spawn_east(t_env *env, int x, int y);
+unsigned int	paint_player(t_env *env, int y, int x);
 void		new_image(t_env *env);
-void		paint_moving_sprite(t_env *env);
 
 /*
 ** KEY
