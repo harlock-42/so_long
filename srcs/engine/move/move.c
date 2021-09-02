@@ -84,7 +84,7 @@ static	void	go_down(t_env *env)
 		|| (env->data.map[env->play.pos_y + 1][env->play.pos_x] == 'E'
 			&& env->data.nb_coll > 0))
 		return ;
-	if (env->data.map[env->play.pos_y + 1][env->play.pos_x] == 'P')
+	if (env->data.map[env->play.pos_y + 1][env->play.pos_x] == 'C')
 		--env->data.nb_coll;
 	if (env->data.map[env->play.pos_y + 1][env->play.pos_x] == 'E')
 		escape_game(env);
