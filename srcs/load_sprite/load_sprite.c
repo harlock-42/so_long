@@ -6,7 +6,7 @@
 /*   By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:26:43 by tallaire          #+#    #+#             */
-/*   Updated: 2021/08/30 16:29:31 by tallaire         ###   ########.fr       */
+/*   Updated: 2021/08/31 18:21:20 by tallaire         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static	char	**get_all_the_path_name(char **str)
 	str[P_RIGHT_0] = ft_strdup("./sprite/ash_right_0.xpm");
 	str[P_RIGHT_1] = ft_strdup("./sprite/ash_right_1.xpm");
 	str[P_RIGHT_2] = ft_strdup("./sprite/ash_right_2.xpm");
+	str[NB_SPRITE] = NULL;
 	return (str);
 }
 

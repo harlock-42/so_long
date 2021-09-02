@@ -32,14 +32,16 @@ static	char	*cat_buff(char *str, char *buff)
 static	char	*read_map(int fd)
 {
 	char	*str;
-	char	*buffer[BUFFER_SIZE];
+	char	buffer[BUFFER_SIZE];
 	int		ret;
 
 	ret = 0;
 	str = NULL;
+	ft_bzero(buffer, BUFFER_SIZE);
 	while (1)
 	{
 		ret = read(fd, buffer, BUFFER_SIZE);
+		buffer[ret] = '\0';
 		if (ret == 0)
 			break ;
 		if (ret == (-1))
@@ -47,7 +49,7 @@ static	char	*read_map(int fd)
 			free(str);
 			return (NULL);
 		}
-		str = cat_buff(str, (char *)buffer);
+		str = cat_buff(str, buffer);
 		if (str == NULL)
 			return (NULL);
 	}

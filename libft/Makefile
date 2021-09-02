@@ -6,7 +6,7 @@
 #    By: tallaire <tallaire@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/03 14:39:06 by tallaire          #+#    #+#              #
-#    Updated: 2021/05/31 15:52:39 by tallaire         ###   ########.fr        #
+#    Updated: 2021/08/31 18:10:15 by tallaire         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,6 @@ SRC_NAME	+=	ft_strcmp.c
 SRC_NAME	+=	ft_strcpy.c
 SRC_NAME	+=	ft_strdup.c
 SRC_NAME	+=	ft_strjoin.c
-SRC_NAME	+=	ft_strjoin_free.c
 SRC_NAME	+=	ft_strlcat.c
 SRC_NAME	+=	ft_strlcpy.c
 SRC_NAME	+=	ft_strldup.c
