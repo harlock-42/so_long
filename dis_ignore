@@ -1,0 +1,12 @@
+{
+   ignore_lib
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+}
+{
+   ignore_lib
+   Memcheck:Leak
+   ...
+   obj:/usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+}

@@ -30,6 +30,7 @@ void	escape_game(t_env *env)
 		free(env->data.map[i]);
 		++i;
 	}
+	mlx_destroy_window(env->mlx.mlx, env->mlx.win);
 	free(env->data.map);
 	free(env->mlx.mlx);
 	exit(0);
